@@ -47,7 +47,7 @@
         public function realizarLogin ($email, $senha){
             $result = file("../model/funcionario.db");
             foreach ($result as $index => $r) {
-                if(explode("|", $r)[3] == $email){
+                if(explode("|", $r)[2] == $email){
                     if (explode("|", $r)[1] == $senha){
                         //echo "Usuario autenticado";
                         return true;

@@ -5,12 +5,22 @@
     //echo $email . " - " . $senha;
 
     include "../dao/ClienteDao.php";
+    include "../dao/FuncionarioDao.php";
 
-    $dao = new ClienteDao();
-    $autenticado = $dao->realizarLogin($email, $senha);
 
-    if ($autenticado){
+    // cliente
+    $clienteDao = new ClienteDao();
+    // funcionario
+    $funcionarioDao = new FuncionarioDao();
+
+
+
+    if ($clienteDao->realizarLogin($email, $senha)){
         //echo "Usuário conectado";
+        header("Location: ../view/home.php");
+    }
+    else if ($funcionarioDao->realizarLogin($email, $senha)){
+        //echo "funcionario conectado";
         header("Location: ../view/home.php");
     }
     else {
