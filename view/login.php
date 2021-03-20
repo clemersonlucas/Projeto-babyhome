@@ -1,3 +1,14 @@
+<?php
+    // vamos pegar o erro caso o usuario tenha tentado logar antes
+    $erro = $_GET["erro"];
+    if ($erro == "400"){
+        echo "<script>";
+        echo "alert('Usuário não cadastrado');";
+        echo "</script>";
+    }
+?>
+
+
 <!DOCTYPE html>
 <html lang="pt-br">
 
@@ -13,10 +24,10 @@
     <main>
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.bundle.min.js" integrity="sha384-b5kHyXgcpbZJO/tY9Ul7kGkf1S0CWuKcCD38l8YkeH8z8QjE0GmW1gYU5S9FOnJ0" crossorigin="anonymous"></script>
         <p class="text-center h3" id="acesse">Acesse a sua conta</p>
-        <form action="../view/home.php" method="post" class="needs-validation" id="form-cadastro">
+        <form action="../method/autenticacao.php" method="post" class="needs-validation" id="form-cadastro">
             <div class="mb-3">
                 <label for="exampleInputEmail1" class="form-label">E-mail de acesso</label>
-                <input type="email" required class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+                <input name="email" type="email" required class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
                 <div id="emailHelp" class="form-text">Nunca compartilhe seu e-mail com ninguém.</div>
                 <div class="invalid-feedback">
                     Por favor, insira seu email.
@@ -24,7 +35,7 @@
             </div>
             <div class="mb-3">
                 <label for="exampleInputPassword1" class="form-label">Senha</label>
-                <input type="password" required class="form-control" id="exampleInputPassword1">
+                <input name="senha" type="password" required class="form-control" id="exampleInputPassword1">
                 <div class="invalid-feedback">
                     Por favor, insira sua senha.
                 </div>
