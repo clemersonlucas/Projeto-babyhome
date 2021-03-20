@@ -1,0 +1,242 @@
+main article{
+    display: inline-block;
+    margin-left: 22px;
+    margin-right: 22px;
+}
+main form{
+    margin-left: 20px;
+    margin-right: 20px;
+}
+main > div > ul > li{
+    list-style: none;
+}
+footer{
+    padding: 1em;
+    text-align: center;
+}
+footer > p{
+    text-align: center;
+    margin-left: 35%;
+    margin-right: 35%;
+}
+footer > div{
+    margin-left: 35%;
+    margin-right: 35%;
+}
+footer > div > ul > li{
+    list-style: none;
+    display: inline-block;
+}
+footer > div > ul > li > a > img{
+    width: 30px;
+    height: 30px;
+    margin-right: 10px;
+}
+nav > div{
+    text-align: center;
+}
+main > img{
+    width:300px; 
+    height: 300px; 
+    margin-left: 524px
+}
+#barra{
+    color:#e3e3e3;
+}
+#progresso{
+    width:300px; 
+    margin-left: 524px
+}
+#adicionar{
+    width:300px; 
+    margin-left: 520px
+}
+#input-pesquisa{
+    width: 500px;
+    margin-right: 10px;
+    margin-left: 350px;
+}
+#acesse{
+    margin-top: 30px;
+    margin-bottom: 10px;
+}
+#form-cadastro{
+    width: 320px;
+    margin-left: 528px;
+}
+#form-cadastre-se{
+    display: inline-block;
+    margin-left: 528px;
+    width:320px;
+}
+#card{
+    margin-bottom: 100px;
+}
+#cadastre-se{
+    text-align: center;
+    margin-top: 10px;
+}
+#adicionar-ao-carrinho{
+    margin-left: 586px;
+}
+#btn-delete{
+    margin-left: 80%;
+    margin-top: 20px;
+}
+@media screen and (max-width: 1125px){
+    main > article > div{
+        margin-left: 2px;
+        margin-bottom: 30px;
+    }
+    main > img , #progresso , #adicionar{
+        margin-left: 400px;
+    }
+    #adicionar{
+        width: 320px;
+    }
+    #input-pesquisa{
+    width: 500px;
+    margin-right: 10px;
+    margin-left:250px;
+    }
+    #form-cadastro , #form-cadastre-se{
+        width: 920px;
+        margin-left: 50px;
+    }
+    #adicionar-ao-carrinho{
+        margin-left: 450px;
+    }
+}
+@media screen and (max-width: 1030px){
+    main > article > div{
+        margin-left: 90px;
+        margin-bottom: 30px;
+    }
+    main > img , #progresso , #adicionar{
+        margin-left: 300px;
+    }
+    #input-pesquisa{
+    width: 500px;
+    margin-right: 10px;
+    margin-left:250px;
+    }
+    #form-cadastro , #form-cadastre-se{
+        width: 800px;
+        margin-left: 80px;
+    }
+    #adicionar-ao-carrinho{
+        margin-left: 300px;
+    }
+}
+@media screen and (max-width: 900px){
+    main > article > div{
+        margin-left: 40px;
+    }
+    main > img , #progresso{
+        margin-left: 230px;
+    }
+    #adicionar{
+        width: 320px;
+    }
+    #input-pesquisa{
+    width: 500px;
+    margin-right: 10px;
+    margin-left:initial;
+    }
+    #form-cadastro , #form-cadastre-se{
+        width: 600px;
+        margin-left: 80px;
+    }
+}
+@media screen and (max-width: 766px){
+    main > article > div{
+        margin-left: 150px;
+    }
+    #input-pesquisa{
+    width: 500px;
+    margin-right: 10px;
+    margin-left:initial;
+    }
+    #adicionar{
+        width: 320px;
+        margin-left: 200px;
+    }
+    #form-cadastro , #form-cadastre-se{
+        width: 500px;
+        margin-left: 60px;
+    }
+    #adicionar-ao-carrinho{
+        margin-left: 200px;
+    }
+}
+@media screen and (max-width: 650px){
+    main > article > div{
+    margin-left: 100px;
+    }
+    main > img , #progresso{
+        margin-left: 100px;
+    }
+    #adicionar{
+        width: 320px;
+        margin-left: 100px;
+    }
+    #input-pesquisa{
+    width: 300px;
+    margin-right: 10px;
+    margin-left:initial;
+    }
+    #form-cadastro , #form-cadastre-se{
+        width: 380px;
+        margin-left: 40px;
+    }
+    #cadastre-se{
+        text-align: center;
+        display: block;
+    }
+    footer p{
+        text-align: start;
+        margin-left: 20px;
+        margin-right: 20px;
+    }
+    footer > div{
+        margin-left: 60px;
+    }
+}
+@media screen and (max-width: 440px){
+    main > article > div{
+        margin-left: 0px;
+    }
+    #input-pesquisa{
+    width: 200px;
+    margin-right: 10px;
+    margin-left:initial;
+    }
+    main > img , #progresso , #adicionar{
+        margin-left: 1px;
+    }
+    #form-cadastro , #form-cadastre-se{
+        width: 300px;
+        margin-left: 10px;
+    }
+    footer > div , footer p{
+        margin-left: 24px;
+    }
+    #adicionar-ao-carrinho{
+    margin-left: 80px;
+}
+}
+/*menor resolução de dispositivos móveis do mercado*/
+@media screen and (max-width: 320px){ 
+    main > article{
+        margin-left: 10px;
+    }
+    #input-pesquisa{
+    width: 150px;
+    margin-right: 9px;
+    margin-left:initial;
+    }
+    footer > div , footer p{
+        margin-left: 15px;
+        width: 190px;
+    }
+}
