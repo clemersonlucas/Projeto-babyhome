@@ -7,7 +7,8 @@
                 echo explode("|", $r)[0] . " - "; 
                 echo explode("|", $r)[1] . " - ";
                 echo explode("|", $r)[2] . " - ";
-                echo explode("|", $r)[3];
+                echo explode("|", $r)[3] . " - ";
+                echo explode("|", $r)[4];
                 echo "<br>";
             }
         } 
@@ -17,7 +18,7 @@
             $encontrou = false;
             $result = file("../model/cliente.db");
             foreach ($result as $index => $r) {
-                if(explode("|", $r)[3] == $id){
+                if(explode("|", $r)[4] == $id){
                     $encontrou = true;
                     $linha = $index;
                 }
@@ -30,15 +31,15 @@
             }
         }
     
-        public function update ($nome, $senha, $email, $id){
+        public function update ($nome, $senha, $link, $email, $id){
             $this->delete($id);
-            $this->insertJaCadastrado($nome, $senha, $email, $id);
+            $this->insertJaCadastrado($nome, $senha, $link, $email, $id);
         }
     
-        public function insert ($nome, $senha, $email){    
+        public function insert ($nome, $senha, $link, $email){    
             $delimitador = "|";
             $banco = fopen("../model/cliente.db", "a");
-            fwrite ($banco, $nome . $delimitador . $senha .  $delimitador 
+            fwrite ($banco, $nome . $delimitador . $senha .  $delimitador . $link .  $delimitador 
                     . $email . $delimitador . $this->gerarID() . "\n");
             fclose ($banco);
         }
@@ -62,10 +63,10 @@
         }
 
 
-        public function insertJaCadastrado ($nome, $senha, $funcao, $email, $id){    
+        public function insertJaCadastrado ($nome, $senha, $link, $funcao, $email, $id){    
             $delimitador = "|";
             $banco = fopen("../model/cliente.db", "a");
-            fwrite ($banco, $nome . $delimitador . $senha .  $delimitador 
+            fwrite ($banco, $nome . $delimitador . $senha .  $delimitador . $link .  $delimitador
                     . $email . $delimitador . $id . "\n");
             fclose ($banco);
         }
