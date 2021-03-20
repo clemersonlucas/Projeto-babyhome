@@ -2,6 +2,31 @@
 
     class ProdutoDao {
 
+        public function showProdutos (){
+            $result = file("../model/produto.db");
+            foreach ($result as $index => $r) {
+                $link = explode("|", $r)[3];
+                $nome = explode("|", $r)[0];
+                $quantidade = explode("|", $r)[2];
+                $valor = explode("|", $r)[1];
+                $descricao = "Vão comer ovo";
+
+               
+                echo "<article id='card'>";
+                echo '<div class="card" style="width: 18rem; margin-bottom:30px;">';
+                echo "<img src='$link' class='card-img-top' alt='...'>";
+
+                echo '<div class="card-body">
+                        <h5 class="card-title">' . $nome .'</h5>
+                        <p class="card-text">' . $descricao . '</p>
+                        <a href="../view/detalhe-produto.php" class="btn btn-outline-info"> R$ ' . $valor .'</a>
+                    </div>';
+                echo "</div>";    
+                echo "</article>";
+            }
+        }
+
+
         public function select (){
             $result = file("../model/produto.db");
             foreach ($result as $index => $r) {

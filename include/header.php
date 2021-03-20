@@ -28,7 +28,7 @@
                         Configurações
                     </a>
                     <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                        <li><a class="dropdown-item" href="../view/perfil.php">Perfil</a></li>
+                        <li><a class="dropdown-item" href="../view/perfil.php"   >Perfil</a></li>
                         <li><a class="dropdown-item" target="_blank" href="../view/feedback.php">Feedback</a></li>
                         <li><a class="dropdown-item" target="_blank" href="../view/sobre.php">Sobre</a></li>
                         <li>

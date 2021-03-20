@@ -1,18 +1,139 @@
 <?php
-
+    include '../controller/Cliente.php';
+    
     class ClienteDao{
-        public function select (){
+        
+
+        //metodos extra
+        public function logar ($nome, $senha, $link, $email, $id){
+            $this->deslogar();
+            $delimitador = "|";
+            $banco = fopen("../model/cliente_logado.db", "a");
+            fwrite ($banco, $nome . $delimitador . $senha .  $delimitador . $link .  $delimitador 
+                    . $email . $delimitador . $id);
+            fclose ($banco);
+        }
+
+        public function deslogar (){
+            unlink("../model/cliente_logado.db");
+        }
+
+
+        public function selectNomeLogado (){
+            $result = file("../model/cliente_logado.db");
+            foreach ($result as $index => $r) {
+               return explode("|", $r)[0];        
+            }  
+            return null;
+        } 
+        public function selectSenhaLogado (){
+            $result = file("../model/cliente_logado.db");
+            foreach ($result as $index => $r) {
+               return explode("|", $r)[1];        
+            }  
+            return null;
+        } 
+        public function selectLinkLogado (){
+            $result = file("../model/cliente_logado.db");
+            foreach ($result as $index => $r) {
+               return explode("|", $r)[2];        
+            }  
+            return null;
+        } 
+        public function selectEmailLogado (){
+            $result = file("../model/cliente_logado.db");
+            foreach ($result as $index => $r) {
+               return explode("|", $r)[3];        
+            }  
+            return null;
+        } 
+        public function selectIdLogado (){
+            $result = file("../model/cliente_logado.db");
+            foreach ($result as $index => $r) {
+               return explode("|", $r)[4];        
+            }  
+            return null;
+        } 
+
+
+
+
+
+
+
+        // ATÉ AQUI TA FUNCIONANDO
+
+        public function selectNome ($id){
             $result = file("../model/cliente.db");
             foreach ($result as $index => $r) {
-                echo explode("|", $r)[0] . " - "; 
-                echo explode("|", $r)[1] . " - ";
-                echo explode("|", $r)[2] . " - ";
-                echo explode("|", $r)[3] . " - ";
-                echo explode("|", $r)[4];
-                echo "<br>";
-            }
+                $idBanco = explode("|", $r)[4]; 
+                if ($id == intval($idBanco)){
+                    return explode("|", $r)[0];        
+                }                    
+            }  
+            return null;
         } 
+
+        public function selectSenha ($id){
+            $result = file("../model/cliente.db");
+            foreach ($result as $index => $r) {
+                //echo explode("|", $r)[3] . " - " . explode("|", $r)[1] . "<br>";
+                $idBanco = explode("|", $r)[4]; 
+                if ($id == intval($idBanco)){
+                    return explode("|", $r)[1];        
+                }                    
+            }  
+            return null;
+        } 
+
+        public function selectLink ($id){
+            $result = file("../model/cliente.db");
+            foreach ($result as $index => $r) {
+                //echo explode("|", $r)[3] . " - " . explode("|", $r)[1] . "<br>";
+                $idBanco = explode("|", $r)[4]; 
+                if ($id == intval($idBanco)){
+                    return explode("|", $r)[2];        
+                }                    
+            }  
+            return null;
+        } 
+
+
+
+        public function selectEmail ($id){
+            $result = file("../model/cliente.db");
+            foreach ($result as $index => $r) {
+                //echo explode("|", $r)[3] . " - " . explode("|", $r)[1] . "<br>";
+                $idBanco = explode("|", $r)[4]; 
+                if ($id == intval($idBanco)){
+                    return explode("|", $r)[3];        
+                }                    
+            }  
+            return null;
+        } 
+
+
+
+
+
+        public function getId ($email, $senha){
+            $result = file("../model/cliente.db");
+            foreach ($result as $index => $r) {
+                //echo explode("|", $r)[2] . " - " . explode("|", $r)[1] . "<br>";   
+                if (explode("|", $r)[3] == $email){
+                    if (explode("|", $r)[1] == $senha){
+                        //echo "Usuario autenticado";
+                        $id = explode("|", $r)[4];
+                        return $id;
+                        
+                    }
+                }                      
+            }  
+            return null;
+        } 
+
     
+
         public function delete ($id){
             $linha = 0;
             $encontrou = false;
@@ -48,8 +169,8 @@
         public function realizarLogin ($email, $senha){
             $result = file("../model/cliente.db");
             foreach ($result as $index => $r) {
-                //echo explode("|", $r)[2] . " - " . explode("|", $r)[1] . "<br>";
-               if (explode("|", $r)[2] == $email){
+                //echo explode("|", $r)[3] . " - " . explode("|", $r)[1] . "<br>";
+                if (explode("|", $r)[3] == $email){
                     if (explode("|", $r)[1] == $senha){
                         //echo "Usuario autenticado";
                         return true;
@@ -75,6 +196,8 @@
 
     }
 ?>
+
+
 
 
 

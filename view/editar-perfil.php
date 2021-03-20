@@ -1,3 +1,15 @@
+<?php
+    include '../dao/ClienteDao.php';
+    $dao = new ClienteDao();
+    $email = $dao->selectEmailLogado();
+    $senha = $dao->selectSenhaLogado();
+    $nome = $dao->selectNomeLogado();
+    $link = $dao->selectLinkLogado();
+?>
+
+
+
+
 <!DOCTYPE html>
 <html lang="pt-br">
 
@@ -13,31 +25,31 @@
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.bundle.min.js" integrity="sha384-b5kHyXgcpbZJO/tY9Ul7kGkf1S0CWuKcCD38l8YkeH8z8QjE0GmW1gYU5S9FOnJ0" crossorigin="anonymous"></script>
         <br>
         <p class="h3 text-center">Informações</p>
-        <form action="../view/perfil.php" class="row g-3" method="post">
+        <form action="../method/modificarPerfil.php" class="row g-3" method="post">
             <div id="form-cadastre-se">
                 <label for="validationCustom01" class="form-label">Nome</label>
-                <input type="text" value="Caio" class="form-control" id="validationCustom01">
+                <input name="nome" type="text" value="<?php echo $nome;?>" class="form-control" id="validationCustom01">
                 <div class="valid-feedback">
                     Parece bom!
                 </div>
             </div>
             <div id="form-cadastre-se">
                 <label for="validationCustom01" class="form-label">Foto de perfil</label>
-                <input type="text" value="foto-cabore.png" class="form-control" id="validationCustom01">
+                <input name="link" type="text" value="<?php echo $link;?>" class="form-control" id="validationCustom01">
                 <div class="invalid-feedback">
                     Por favor, insira o link acima.
                 </div>
             </div>
             <div id="form-cadastre-se">
                 <label for="validationCustom02" class="form-label">E-mail</label>
-                <input type="email" value="caio@email.com" class="form-control" id="validationCustom02">
+                <input name="email" type="email" value="<?php echo $email;?>" class="form-control" id="validationCustom02">
                 <div class="invalid-feedback">
                     Por favor, insira um email.
                 </div>
             </div>
             <div id="form-cadastre-se">
                 <label for="validationCustom02" class="form-label">Senha</label>
-                <input type="password" value="macarronada" class="form-control" id="validationCustom02">
+                <input name="senha" type="password" value="<?php echo $senha;?>" class="form-control" id="validationCustom02">
                 <div class="invalid-feedback">
                     Por favor, insira sua senha.
                 </div>

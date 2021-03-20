@@ -1,3 +1,9 @@
+<?php
+    include '../dao/ClienteDao.php';
+    $dao = new ClienteDao();
+?>
+
+
 <!DOCTYPE html>
 <html lang="pt-br">
 
@@ -20,13 +26,13 @@
         <div>
             <br>
             <p class="h4 text-center">Nome do cidadão</p>
-            <p class="h5 text-center">Caio César Penha Dantas</p>
+            <p class="h5 text-center"><?php echo $dao->selectNomeLogado();?></p>
             <p class="text-center" id="barra">_____________________</p>
             <p class="h4 text-center">E-mail do cidadão</p>
-            <p class="h5 text-center">caio@email.com</p>
+            <p class="h5 text-center"><?php echo $dao->selectEmailLogado();?></p>
             <p class="text-center" id="barra">_____________________</p>
             <p class="h4 text-center">Senha do cidadão</p>
-            <p class="h5 text-center">macarronada</p>
+            <p class="h5 text-center"><?php echo $dao->selectSenhaLogado();?></p>
             <p class="text-center" id="barra">_____________________</p>
         </div>
     </main>

@@ -1,6 +1,18 @@
 <br>
 <p class="h3 text-center">Anúncios recentes</p> 
 <br>
+
+
+<?php
+
+    include '../dao/ProdutoDao.php';
+    $produto = new ProdutoDao();
+    $produto->showProdutos();
+?>
+
+
+
+<!--
 <article id="card">
     <div class="card" style="width: 18rem; margin-bottom:30px;">
         <img src="../img/carrinho.jpg" class="card-img-top" alt="...">
@@ -80,4 +92,4 @@
             <a href="../view/detalhe-produto.php" class="btn btn-outline-info">Preço</a>
         </div>
     </div>
-</article>
+</article>-->
