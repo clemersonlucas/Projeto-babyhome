@@ -14,7 +14,8 @@
 
 
     $idFuncionario = $clienteDao->selectIdLogado();
-    $produtoDao->insert($nome, $valor, $quantidade, $link, $idFuncionario);    
+    $id = $produtoDao->gerarID();
+    $produtoDao->insert($nome, $valor, $quantidade, $link, $descricao, $idFuncionario, $id);    
 
     header("Location: ../view/home.php");
 

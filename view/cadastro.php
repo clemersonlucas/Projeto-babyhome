@@ -13,24 +13,32 @@
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.bundle.min.js" integrity="sha384-b5kHyXgcpbZJO/tY9Ul7kGkf1S0CWuKcCD38l8YkeH8z8QjE0GmW1gYU5S9FOnJ0" crossorigin="anonymous"></script>
         <br>
         <p class="h3 text-center">Venha fazer parte da nossa comunidade!</p>
-        <form action="../view/login.php" class="row g-3 needs-validation" method="post">
+        <form action="../method/cadastrarCliente.php" class="row g-3 needs-validation" method="post">
             <div id="form-cadastre-se">
                 <label for="validationCustom01" class="form-label">Nome</label>
-                <input type="text" class="form-control" id="validationCustom01" required placeholder="Insira seu nome aqui">
+                <input name="nome" type="text" class="form-control" id="validationCustom01" required placeholder="Insira seu nome aqui">
                 <div class="valid-feedback">
                     Parece bom!
                 </div>
             </div>
             <div id="form-cadastre-se">
                 <label for="validationCustom02" class="form-label">E-mail</label>
-                <input type="email" class="form-control" id="validationCustom02" placeholder="Insira seu e-mail" required>
+                <input name="email" type="email" class="form-control" id="validationCustom02" placeholder="Insira seu e-mail" required>
+                <div class="invalid-feedback">
+                    Por favor, insira um email.
+                </div>
+            </div>
+            
+            <div id="form-cadastre-se">
+                <label for="validationCustom02" class="form-label">Link da foto do perfil</label>
+                <input name="link" type="text" class="form-control" id="validationCustom02" placeholder="Insira seu link da imagem" required>
                 <div class="invalid-feedback">
                     Por favor, insira um email.
                 </div>
             </div>
             <div id="form-cadastre-se">
                 <label for="validationCustom02" class="form-label">Senha</label>
-                <input type="password" class="form-control" id="validationCustom02" placeholder="Insira sua senha" required>
+                <input name="senha" type="password" class="form-control" id="validationCustom02" placeholder="Insira sua senha" required>
                 <div class="invalid-feedback">
                     Por favor, insira sua senha.
                 </div>

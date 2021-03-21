@@ -129,9 +129,7 @@
                 }                      
             }  
             return null;
-        } 
-
-    
+        }     
 
         public function delete ($id){
             $linha = 0;
@@ -180,7 +178,12 @@
         }    
 
         public function gerarID (){
-            return "0";
+            $cont = 0;
+            $result = file("../model/produto.db");
+            foreach ($result as $index) {
+               $cont = $cont + 1;
+            }
+            return $cont;
         }
 
 

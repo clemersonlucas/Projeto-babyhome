@@ -14,10 +14,10 @@
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.bundle.min.js" integrity="sha384-b5kHyXgcpbZJO/tY9Ul7kGkf1S0CWuKcCD38l8YkeH8z8QjE0GmW1gYU5S9FOnJ0" crossorigin="anonymous"></script>
         <p class="h3 text-center">Pesquisa</p>
         <br>
-        <form action="../view/resultados.php" id="form-cadastro" method="post">
+        <form action="../method/procurarProduto.php" id="form-cadastro" method="get">
             <div class="mb-3">
-                <label for="exampleFormControlInput1" class="form-label">Insira aqui o que procura</label>
-                <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="Produto x">
+                <label for="exampleFormControlInput1" class="form-label">Procure o nome do produto que deseja</label>
+                <input name="nome_produto" type="text" class="form-control" id="exampleFormControlInput1" placeholder="">
             </div>
             <button type="submit" class="btn btn-primary">Buscar</button>
         </form>
