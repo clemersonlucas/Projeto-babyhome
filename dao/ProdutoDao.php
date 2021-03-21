@@ -5,12 +5,14 @@
         public function showProdutos (){
             $result = file("../model/produto.db");
             foreach ($result as $index => $r) {
-                $link = explode("|", $r)[3];
+              
                 $nome = explode("|", $r)[0];
-                $quantidade = explode("|", $r)[2];
                 $valor = explode("|", $r)[1];
-                $descricao = "Vão comer ovo";
-
+                $quantidade = explode("|", $r)[2];
+                $link = explode("|", $r)[3];
+                $descricao = explode("|", $r)[4];
+                $idQuemAlterou = explode("|", $r)[5];
+               
                
                 echo "<article id='card'>";
                 echo '<div class="card" style="width: 18rem; margin-bottom:30px;">';
@@ -25,6 +27,38 @@
                 echo "</article>";
             }
         }
+
+
+        public function showMeusProdutos ($meuId){
+            $result = file("../model/produto.db");
+            foreach ($result as $index => $r) 
+            {
+                $nome = explode("|", $r)[0];
+                $valor = explode("|", $r)[1];
+                $quantidade = explode("|", $r)[2];
+                $link = explode("|", $r)[3];
+                $descricao = explode("|", $r)[4];
+                $idQuemAlterou = explode("|", $r)[5];
+
+                //echo $meuId . " - " . $idQuemAlterou . "<br>";
+
+                if (intval($idQuemAlterou) == $meuId){
+                    echo "<article id='card'>";
+                    echo '<div class="card" style="width: 18rem; margin-bottom:30px;">';
+                    echo "<img src='$link' class='card-img-top' alt='...'>";
+
+                    echo '<div class="card-body">
+                            <h5 class="card-title">' . $nome .'</h5>
+                            <p class="card-text">' . $descricao . '</p>
+                            <a href="../view/detalhe-produto.php" class="btn btn-outline-info"> R$ ' . $valor .'</a>
+                        </div>';
+                    echo "</div>";    
+                    echo "</article>";
+                }
+            }
+        }
+
+
 
 
         public function select (){
@@ -63,18 +97,23 @@
             $this->insertJaCadastrado($nome, $valor, $quantidade, $link, $idFuncionario, $id);
         }
     
-        public function insert ($nome, $valor, $quantidade, $link, $idFuncionario){    
+        public function insert ($nome, $valor, $quantidade, $link, $descricao, $idFuncionario){    
             $delimitador = "|";
             $banco = fopen("../model/produto.db", "a");
             fwrite ($banco, $nome . $delimitador . $valor .  $delimitador 
-                    . $quantidade . $delimitador . $link . $delimitador
+                    . $quantidade . $delimitador . $link . $delimitador . $descricao . $delimitador
                     . $idFuncionario . $delimitador . $this->gerarID() . "\n");
             fclose ($banco);
         }
 
         // more
         public function gerarID (){
-            return "0";
+            $cont = 0;
+            $result = file("../model/produto.db");
+            foreach ($result as $index) {
+               $cont = $cont + 1;
+            }
+            return $cont;
         }
 
         public function insertJaCadastrado ($nome, $valor, $quantidade, $link, $idFuncionario, $id){    

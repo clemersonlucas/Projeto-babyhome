@@ -2,8 +2,7 @@
     include '../controller/Cliente.php';
     
     class ClienteDao{
-        
-
+    
         //metodos extra
         public function logar ($nome, $senha, $link, $email, $id){
             $this->deslogar();
@@ -185,11 +184,14 @@
         }
 
 
-        public function insertJaCadastrado ($nome, $senha, $link, $funcao, $email, $id){    
+        public function insertJaCadastrado ($nome, $senha, $link, $email, $id){    
             $delimitador = "|";
             $banco = fopen("../model/cliente.db", "a");
-            fwrite ($banco, $nome . $delimitador . $senha .  $delimitador . $link .  $delimitador
-                    . $email . $delimitador . $id . "\n");
+            fwrite ($banco, $nome . 
+                $delimitador . $senha .  
+                $delimitador . $link . 
+                $delimitador . $email . 
+                $delimitador . $id . "\n");
             fclose ($banco);
         }
     

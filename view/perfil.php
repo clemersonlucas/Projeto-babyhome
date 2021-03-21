@@ -22,7 +22,7 @@
         <br>
         <p class="h3 text-center">Perfil</p>
         <br>
-        <img src="../img/preto.png" alt="Cliente">
+        <img src="<?php echo $dao->selectLinkLogado();?>" alt="Foto do perfil do cliente">
         <div>
             <br>
             <p class="h4 text-center">Nome do cidadão</p>

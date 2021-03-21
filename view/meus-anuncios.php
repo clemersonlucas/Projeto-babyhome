@@ -18,110 +18,16 @@
         <br>
         <p class="h3 text-center">Seus anúncios</p>
         <br>
-        <article id="card">
-            <div class="card" style="width: 18rem; margin-bottom:30px;">
-                <button type="button" class="btn-close" aria-label="Close" id="btn-delete"></button>
-                <br>
-                <img src="../img/carrinho.jpg" class="card-img-top" alt="...">
-                <div class="card-body">
-                    <h5 class="card-title">Produto</h5>
-                    <p class="card-text">Descrição do produto</p>
-                    <a href="../view/editar-produto.php" class="btn btn-outline-primary">Editar</a>
-                    <br>
-                </div>
-            </div>
-        </article>
-        <article id="card">
-            <div class="card" style="width: 18rem; margin-bottom:30px;">
-                <button type="button" class="btn-close" aria-label="Close" id="btn-delete"></button>
-                <br>
-                <img src="../img/carrinho.jpg" class="card-img-top" alt="...">
-                <div class="card-body">
-                    <h5 class="card-title">Produto</h5>
-                    <p class="card-text">Descrição do produto</p>
-                    <a href="../view/editar-produto.php" class="btn btn-outline-primary">Editar</a>
-                    <br>
-                </div>
-            </div>
-        </article>
-        <article id="card">
-            <div class="card" style="width: 18rem; margin-bottom:30px;">
-                <button type="button" class="btn-close" aria-label="Close" id="btn-delete"></button>
-                <br>
-                <img src="../img/carrinho.jpg" class="card-img-top" alt="...">
-                <div class="card-body">
-                    <h5 class="card-title">Produto</h5>
-                    <p class="card-text">Descrição do produto</p>
-                    <a href="../view/editar-produto.php" class="btn btn-outline-primary">Editar</a>
-                    <br>
-                </div>
-            </div>
-        </article>
-        <article id="card">
-            <div class="card" style="width: 18rem; margin-bottom:30px;">
-                <button type="button" class="btn-close" aria-label="Close" id="btn-delete"></button>
-                <br>
-                <img src="../img/carrinho.jpg" class="card-img-top" alt="...">
-                <div class="card-body">
-                    <h5 class="card-title">Produto</h5>
-                    <p class="card-text">Descrição do produto</p>
-                    <a href="../view/editar-produto.php" class="btn btn-outline-primary">Editar</a>
-                    <br>
-                </div>
-            </div>
-        </article>
-        <article id="card">
-            <div class="card" style="width: 18rem; margin-bottom:30px;">
-                <button type="button" class="btn-close" aria-label="Close" id="btn-delete"></button>
-                <br>
-                <img src="../img/carrinho.jpg" class="card-img-top" alt="...">
-                <div class="card-body">
-                    <h5 class="card-title">Produto</h5>
-                    <p class="card-text">Descrição do produto</p>
-                    <a href="../view/editar-produto.php" class="btn btn-outline-primary">Editar</a>
-                    <br>
-                </div>
-            </div>
-        </article>
-        <article id="card">
-            <div class="card" style="width: 18rem; margin-bottom:30px;">
-                <button type="button" class="btn-close" aria-label="Close" id="btn-delete"></button>
-                <br>
-                <img src="../img/carrinho.jpg" class="card-img-top" alt="...">
-                <div class="card-body">
-                    <h5 class="card-title">Produto</h5>
-                    <p class="card-text">Descrição do produto</p>
-                    <a href="../view/editar-produto.php" class="btn btn-outline-primary">Editar</a>
-                    <br>
-                </div>
-            </div>
-        </article>
-        <article id="card">
-            <div class="card" style="width: 18rem; margin-bottom:30px;">
-                <button type="button" class="btn-close" aria-label="Close" id="btn-delete"></button>
-                <br>
-                <img src="../img/carrinho.jpg" class="card-img-top" alt="...">
-                <div class="card-body">
-                    <h5 class="card-title">Produto</h5>
-                    <p class="card-text">Descrição do produto</p>
-                    <a href="../view/editar-produto.php" class="btn btn-outline-primary">Editar</a>
-                    <br>
-                </div>
-            </div>
-        </article>
-        <article id="card">
-            <div class="card" style="width: 18rem; margin-bottom:30px;">
-                <button type="button" class="btn-close" aria-label="Close" id="btn-delete"></button>
-                <br>
-                <img src="../img/carrinho.jpg" class="card-img-top" alt="...">
-                <div class="card-body">
-                    <h5 class="card-title">Produto</h5>
-                    <p class="card-text">Descrição do produto</p>
-                    <a href="../view/editar-produto.php" class="btn btn-outline-primary">Editar</a>
-                    <br>
-                </div>
-            </div>
-        </article>
+
+        <?php
+            include '../dao/ProdutoDao.php';
+            include '../dao/ClienteDao.php';
+            $clienteDao = new ClienteDao();
+            $produtoDao = new ProdutoDao();
+            $id = $clienteDao->selectIdLogado();
+            $produtoDao->showMeusProdutos($id);
+        ?>
+
     </main>
 </body>
 <?php include '../include/footer.php'; ?>

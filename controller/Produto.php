@@ -6,20 +6,25 @@ class Funcionario{
     private $valor;
     private $quantidade;
     private $link;
+    private $descricacao;
     private $idFuncionario;
     private $id;
     
-    public function __construct ($n, $v, $q, $l, $if, $i){
+    public function __construct ($n, $v, $q, $l, $d, $if, $i){
         $this->$nome = $n;
         $this->$valor = $v;
         $this->$quantidade = $q;
         $this->$link = $l;
+        $this->$descricacao = $d;
         $this->$idFuncionario = $if;
         $this->$id = $i;
     }
     
     public function setNome($n) {
         $this->$nome = $n;
+    }
+    public function setDescricao($d) {
+        $this->$descricacao = $d;
     }
     public function setValor($v) {
         $this->$valor = $v;
@@ -39,6 +44,9 @@ class Funcionario{
 
     public function getNome (){
         return $this->$nome;
+    }
+    public function getDescricao (){
+        return $this->$descricacao;
     }
     public function getValor (){
         return $this->$valor;

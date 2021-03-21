@@ -6,6 +6,10 @@
     $link = $_POST["link"];
     $email = $_POST["email"];
 
+
+    //echo $nome . " - " . $senha . " - " . $link . " - " . $email;
+
+    
     $clienteDao = new ClienteDao();
     $id = $clienteDao->selectIdLogado();
     $clienteDao->logar($nome, $senha, $link, $email, $id); // dados salvos ao logar
