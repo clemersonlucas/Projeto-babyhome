@@ -1,4 +1,5 @@
 <?php
+    include '../method/acess.php'; 
     include '../dao/ClienteDao.php';
     $dao = new ClienteDao();
     $email = $dao->selectEmailLogado();
@@ -6,9 +7,6 @@
     $nome = $dao->selectNomeLogado();
     $link = $dao->selectLinkLogado();
 ?>
-
-
-
 
 <!DOCTYPE html>
 <html lang="pt-br">

@@ -6,6 +6,13 @@
         echo "alert('Usuário não cadastrado');";
         echo "</script>";
     }
+    if ($erro == "500"){
+        echo "<script>";
+        echo "alert('Você não possui acesso a essa página');";
+        echo "alert('Cadastre-se em nosso sistema!');";
+        echo "</script>";
+    }
+    session_start();
 ?>
 
 
@@ -47,6 +54,16 @@
                 <a href="../view/cadastro.php">Cadastre-se</a>
             </p>
         </div>
+        <div>
+            <p>
+                <?php
+                    if(isset($_SESSION["mensagem"])){
+                        echo $_SESSION["mensagem"];
+                                unset($_SESSION["mensagem"]);
+                            }
+                        ?>
+                    </p>
+                </div>
     </main>
 </body>
 <?php include '../include/footer.php'; ?>

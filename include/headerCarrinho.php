@@ -10,7 +10,7 @@
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav">
                     <li class="nav-item">
-                        <a class="nav-link" href="../view/carrinho.php">Carrinho</a>
+                        <a class="nav-link" style="color:#006400;" href="../view/carrinho.php">Carrinho</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="../view/meus-anuncios.php">Meus anúncios</a>
@@ -18,7 +18,6 @@
                     <li class="nav-item">
                         <a class="nav-link" href="../view/perfil.php">Meu perfil</a>
                     </li>
-                   
                 </ul>
             </div>
         </div>

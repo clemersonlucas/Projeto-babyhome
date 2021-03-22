@@ -2,7 +2,7 @@
     <nav class="navbar navbar-expand-lg navbar-light" style="background-color: #ebfcfa;">
         <div class="container-fluid">
             <a class="navbar-brand" href="../view/index.php">
-                <img style="height: 80px; width: 80px;" src="../img/bb.png">
+                <img style="margin-left:20px; margin-right:40px; height: 80px; width: 80px;" src="../img/bb.png">
             </a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>

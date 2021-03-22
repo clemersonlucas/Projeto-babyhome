@@ -5,7 +5,6 @@
     
         //metodos extra
         public function logar ($nome, $senha, $link, $email, $id){
-            $this->deslogar();
             $delimitador = "|";
             $banco = fopen("../model/cliente_logado.db", "a");
             fwrite ($banco, $nome . $delimitador . $senha .  $delimitador . $link .  $delimitador 
@@ -61,7 +60,6 @@
 
 
         // ATÉ AQUI TA FUNCIONANDO
-
         public function selectNome ($id){
             $result = file("../model/cliente.db");
             foreach ($result as $index => $r) {
@@ -131,12 +129,12 @@
             return null;
         }     
 
-        public function delete ($id){
+        public function delete ($nome){
             $linha = 0;
             $encontrou = false;
             $result = file("../model/cliente.db");
             foreach ($result as $index => $r) {
-                if(explode("|", $r)[4] == $id){
+                if(explode("|", $r)[0] == $nome){
                     $encontrou = true;
                     $linha = $index;
                 }

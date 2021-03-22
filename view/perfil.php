@@ -1,8 +1,6 @@
-<?php
-    include '../dao/ClienteDao.php';
-    $dao = new ClienteDao();
+<?php 
+    include '../method/acess.php';
 ?>
-
 
 <!DOCTYPE html>
 <html lang="pt-br">
@@ -15,14 +13,22 @@
 </head>
 
 <body>
-    <?php include '../include/header.php'; ?>
+    <?php include '../include/headerPerfil.php'; ?>
+    <?php include '../include/pesquisa.php'; ?>
+   
+    <?php 
+        include '../dao/ClienteDao.php';
+        $dao = new ClienteDao();
+        echo '<p id="nameCliente"> Usuário: ' . $dao->selectNomeLogado() . '</p>';
+        $id = $dao->selectIdLogado();
+   ?>
+   
     <main>
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.bundle.min.js" integrity="sha384-b5kHyXgcpbZJO/tY9Ul7kGkf1S0CWuKcCD38l8YkeH8z8QjE0GmW1gYU5S9FOnJ0" crossorigin="anonymous"></script>
         <a class=" btn btn-outline-secondary text-center" style="margin: 10px;" href="../view/editar-perfil.php">Editar</a>
+        <a class=" btn btn-outline-secondary text-center" style="margin: 10px;" href="../method/apagarConta.php?id=<?php echo $id;?>">Apagar conta</a>
         <br>
-        <p class="h3 text-center">Perfil</p>
-        <br>
-        <img src="<?php echo $dao->selectLinkLogado();?>" alt="Foto do perfil do cliente">
+        <img style="width:20%; margin-left:40%; max-height:200px;"  src="<?php echo $dao->selectLinkLogado();?>" alt="Foto do perfil do cliente">
         <div>
             <br>
             <p class="h4 text-center">Nome do cidadão</p>

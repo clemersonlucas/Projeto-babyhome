@@ -13,7 +13,7 @@
     $produtoDao = new ProdutoDao();
 
 
-    $idFuncionario = $clienteDao->selectIdLogado();
+    $idFuncionario = $clienteDao->selectNomeLogado();
     $id = $produtoDao->gerarID();
     $produtoDao->insert($nome, $valor, $quantidade, $link, $descricao, $idFuncionario, $id);    
 

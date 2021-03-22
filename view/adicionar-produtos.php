@@ -1,3 +1,8 @@
+<?php 
+    include '../method/acess.php'; 
+?>
+
+
 <!DOCTYPE html>
 <html lang="pt-br">
 

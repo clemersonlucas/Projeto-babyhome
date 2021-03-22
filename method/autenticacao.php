@@ -19,11 +19,14 @@
         $clienteDao->logar($nome, $senha, $link, $email, $id);
         header("Location: ../view/home.php");
     }
-
-
     else if ($funcionarioDao->realizarLogin($email, $senha)){
         //echo "funcionario conectado";
-        header("Location: ../view/home.php");
+        $id = $funcionarioDao->getId($email, $senha);
+        $nome = $funcionarioDao->selectNome($id);
+        $link = $funcionarioDao->selectLink($id);
+
+        $funcionarioDao->logar($nome, $senha, $link, $email, $id);
+        header("Location: ../view-funcionario/home.php");
     }
 
     else {

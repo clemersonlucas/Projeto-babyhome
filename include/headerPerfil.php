@@ -16,9 +16,8 @@
                         <a class="nav-link" href="../view/meus-anuncios.php">Meus anúncios</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="../view/perfil.php">Meu perfil</a>
+                        <a style="color:#006400;" class="nav-link" href="../view/perfil.php">Meu perfil</a>
                     </li>
-                   
                 </ul>
             </div>
         </div>
@@ -34,7 +33,7 @@
                         <li>
                             <hr class="dropdown-divider">
                         </li>
-                        <li><a class="dropdown-item" href="../method/logout.php">Encerrar sessão</a></li>
+                        <li><a class="dropdown-item" href="../view/index.php">Encerrar sessão</a></li>
                     </ul>
                 </li>
             </ul>
