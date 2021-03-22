@@ -12,6 +12,7 @@
     
     $clienteDao = new ClienteDao();
     $id = $clienteDao->selectIdLogado();
+    $clienteDao->deslogar();    
     $clienteDao->logar($nome, $senha, $link, $email, $id); // dados salvos ao logar
     $clienteDao->update($nome, $senha, $link, $email, $id);// alterar dados do banco 
 

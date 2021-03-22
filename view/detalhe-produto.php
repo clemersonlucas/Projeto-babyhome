@@ -46,15 +46,11 @@
         include '../dao/ClienteDao.php';
         $dao = new ClienteDao();
         echo '<p id="nameCliente"> Usuário: ' . $dao->selectNomeLogado() . '</p>';
-    ?>
-
-    <?php
+    
         // vamos verificar se pode alterar o produto
-        $dao = new ClienteDao();
         if (isset($_GET["fornecedor"])){ 
             if ($dao->selectNomeLogado() == $nomeFornecedor){    
-                echo '<a class=" btn btn-outline-secondary text-center" style="margin: 10px;"   
-                href="../view/editar-produto.php?produto=<?php echo $nomeProduto;?>&fornecedor=<?php echo $nomeFornecedor;?>">Alterar produto</a>';
+                echo "<a class='btn btn-outline-secondary text-center' style='margin: 10px;' href='../view/editar-produto.php?produto=$nomeProduto&fornecedor=$nomeFornecedor'>Alterar produto</a>";
             }
         }
 
@@ -78,7 +74,7 @@
             <p class="text-center" id="barra">_____________________</p>
             
             <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.bundle.min.js" integrity="sha384-b5kHyXgcpbZJO/tY9Ul7kGkf1S0CWuKcCD38l8YkeH8z8QjE0GmW1gYU5S9FOnJ0" crossorigin="anonymous"></script>
-        
+         
           <!--  <p class="text-center" id="barra">_____________________</p>
             <p class="h4 text-center">Localização</p>
             <p class="h5 text-center">Localização</p>

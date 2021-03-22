@@ -23,10 +23,10 @@
         //echo "funcionario conectado";
         $id = $funcionarioDao->getId($email, $senha);
         $nome = $funcionarioDao->selectNome($id);
-        $link = $funcionarioDao->selectLink($id);
+        $email = $funcionarioDao->selectEmail($id);
 
-        $funcionarioDao->logar($nome, $senha, $link, $email, $id);
-        header("Location: ../view-funcionario/home.php");
+        $funcionarioDao->logar($nome, $senha, $email, $id);
+        header("Location: ../view-funcionario/home.php?admin=admin");
     }
 
     else {

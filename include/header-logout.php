@@ -10,9 +10,6 @@
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav">
                     <li class="nav-item">
-                        <a class="nav-link active" aria-current="page" target="_blank" href="../view/pesquisa.php">Buscar</a>
-                    </li>
-                    <li class="nav-item">
                         <a class="nav-link" target="_blank" href="../view/feedback.php">Feedback</a>
                     </li>
                     <li class="nav-item">
@@ -22,7 +19,7 @@
             </div>
         </div>
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
-            <a class=" btn btn-outline-primary" href="../view/login.php">Entrar</a>
+            <a class=" btn btn-outline-primary" style="margin-right:40px;" href="../view/login.php">Entrar</a>
         </div>
     </nav>
 </header>

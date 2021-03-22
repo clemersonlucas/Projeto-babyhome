@@ -54,6 +54,34 @@
         } 
 
 
+        // mostrar clientes
+        public function showClientes(){
+            $result = file("../model/cliente.db");
+            foreach ($result as $index => $r) 
+            {
+                $nome = explode("|", $r)[0];
+                $senha = explode("|", $r)[1];
+                $link = explode("|", $r)[2];
+                $email = explode("|", $r)[3];
+                $id = explode("|", $r)[4];
+                
+
+
+                echo "<article id='card' style='margin:auto; width:25%;'>";
+                echo '<div class="card" style="margin:auto; width: 14rem; height:auto; margin-bottom:30px;">';
+                echo "<img style=' margin: auto; max-width: 100%; min-height:10rem;' src='$link' class='card-img-top' alt='...'>";
+
+                echo '<div class="card-body">
+                        <h5 class="card-title">' . $nome .' </h5>
+                        <p class="card-text">' . $email . '</p>
+                        <p style="color:#00f; font-size: 12px;" class="card-text"> Identificador: ' . $id . '</p>';
+                        echo "<a href='../method/removerCliente.php?nome=$nome' style='margin-left: 4px;' class='btn btn-outline-danger'>Remover</a>
+                        </div>
+                    </div>    
+                </article>";
+            
+            }
+        }
 
 
 
@@ -74,7 +102,6 @@
         public function selectSenha ($id){
             $result = file("../model/cliente.db");
             foreach ($result as $index => $r) {
-                //echo explode("|", $r)[3] . " - " . explode("|", $r)[1] . "<br>";
                 $idBanco = explode("|", $r)[4]; 
                 if ($id == intval($idBanco)){
                     return explode("|", $r)[1];        
@@ -129,12 +156,32 @@
             return null;
         }     
 
-        public function delete ($nome){
+
+        public function deleteForName ($name){
             $linha = 0;
             $encontrou = false;
             $result = file("../model/cliente.db");
             foreach ($result as $index => $r) {
-                if(explode("|", $r)[0] == $nome){
+                if(explode("|", $r)[0] == $name){
+                    $encontrou = true;
+                    $linha = $index;
+                }
+            }
+
+            if ($encontrou){
+                $dados = file("../model/cliente.db");
+                unset($dados[$linha]);
+                file_put_contents("../model/cliente.db", $dados);    
+            }
+        }
+
+
+        public function delete ($id){
+            $linha = 0;
+            $encontrou = false;
+            $result = file("../model/cliente.db");
+            foreach ($result as $index => $r) {
+                if(explode("|", $r)[4] == $id){
                     $encontrou = true;
                     $linha = $index;
                 }

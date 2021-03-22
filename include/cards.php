@@ -3,7 +3,6 @@
 <br>
 
 <?php
-
     include '../dao/ProdutoDao.php';
     $produto = new ProdutoDao();
     $produto->showProdutos();

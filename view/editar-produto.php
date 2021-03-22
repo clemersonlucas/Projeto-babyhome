@@ -49,7 +49,7 @@
         <form action="../method/atualizarProduto.php?id=<?php echo $id;?>&fornecedor=<?php echo $nomeFornecedor;?>" class="row g-3 needs-validation" method="post">
             <div id="form-cadastre-se">
                 <label for="validationCustom01" class="form-label">Nome do produto</label>
-                <input name="nome" type="text" value="<?php echo $nome;?>" class="form-control" id="validationCustom01" required placeholder="Insira o nome aqui">;     
+                <input name="nome" type="text" value="<?php echo $nome;?>" class="form-control" id="validationCustom01" required placeholder="Insira o nome aqui">
                 <div class="valid-feedback">
                     Parece bom!
                 </div>

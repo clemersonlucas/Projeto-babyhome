@@ -82,6 +82,36 @@
             }
         }
 
+        public function showProdutosAdmin(){
+            $result = file("../model/produto.db");
+            foreach ($result as $index => $r) 
+            {
+                $nome = explode("|", $r)[0];
+                $valor = explode("|", $r)[1];
+                $quantidade = explode("|", $r)[2];
+                $link = explode("|", $r)[3];
+                $descricao = explode("|", $r)[4];
+                $alterou = explode("|", $r)[5];
+                $id = explode("|", $r)[6];
+        
+                echo "<article id='card' style='margin:auto; width:25%;'>";
+                echo '<div class="card" style="margin:auto; width: 14rem; height:auto; margin-bottom:30px;">';
+                echo "<img style=' margin: auto; max-width: 100%; min-height:10rem;' src='$link' class='card-img-top' alt='...'>";
+
+                echo '<div class="card-body">
+                        <h5 class="card-title">' . $nome .'</h5>
+                        <p class="card-text">' . $descricao . '</p>
+                        <p style="color:#00f; font-size: 12px;" class="card-text"> Modificado por: ' . $alterou . '</p>';
+                        echo "<a href='../view/detalhe-produto.php?produto=$nome&fornecedor=$nomeFornecedor' class='btn btn-outline-info'> R$$valor</a>";
+                        echo "<a href='../method/removerProduto.php?nomeProduto=$nome&admin=admin' style='margin-left: 4px;' class='btn btn-outline-danger'>Remover</a>
+                        </div>";
+                echo "</div>";    
+                echo "</article>";
+            
+            }
+        }
+
+
 
         public function showMeusProdutos ($nomeFornecedor){
             $result = file("../model/produto.db");
